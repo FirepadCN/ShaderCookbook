@@ -49,10 +49,10 @@
 			float4 finalColor;
 			finalColor =lerp(rTxData,gTxData,blendData.g);
 			finalColor =lerp(finalColor,bTxData,blendData.b);
-			finalColor =lerp(finalColor,aTxData,blendData.a);
+			finalColor =lerp(finalColor,rTxData,blendData.r);
 			finalColor.a=1.0;
 			
-			float4  terrainLayers=lerp(_ColorA,_ColorB,blendData.r);
+			float4  terrainLayers=lerp(_ColorA,_ColorB,blendData.a);
 			finalColor*=terrainLayers;
 			finalColor=saturate(finalColor);
 
