@@ -1,4 +1,6 @@
-﻿Shader "ShaderCookbook/Silhouette" {
+﻿// Upgrade NOTE: upgraded instancing buffer 'Props' to new syntax.
+
+Shader "ShaderCookbook/Silhouette" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
@@ -31,8 +33,8 @@
 		float _DotProduct;
 
 		#pragma instancing_options assumeuniformscaling
-		UNITY_INSTANCING_CBUFFER_START(Props)
-		UNITY_INSTANCING_CBUFFER_END
+		UNITY_INSTANCING_BUFFER_START(Props)
+		UNITY_INSTANCING_BUFFER_END(Props)
 
 		void surf (Input IN, inout SurfaceOutput o) {
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
