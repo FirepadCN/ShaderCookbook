@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 306dffecd0e21d34c98025f568958930
 timeCreated: 1524317658
+=======
+guid: 2b575ff3c39a5ee45ac3afc71e039e06
+timeCreated: 1527040402
+>>>>>>> 9980d89c112b45877a3b4146dfab46d289e2120d
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -45,8 +50,14 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+=======
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+>>>>>>> 9980d89c112b45877a3b4146dfab46d289e2120d
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
@@ -65,6 +76,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+<<<<<<< HEAD
+=======
+    androidETC2FallbackOverride: 0
+>>>>>>> 9980d89c112b45877a3b4146dfab46d289e2120d
   spriteSheet:
     serializedVersion: 2
     sprites: []

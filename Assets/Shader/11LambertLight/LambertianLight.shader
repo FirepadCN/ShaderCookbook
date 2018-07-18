@@ -1,4 +1,4 @@
-﻿Shader "Custom/LambertianShader" {
+﻿Shader "ShaderCookbook/LambertianShader" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_LightLevel("Light Level",Range(0.0,3.0))=1

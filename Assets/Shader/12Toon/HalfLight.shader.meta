@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b30bb7937741e6d4694c91e4baeb2f8e
 timeCreated: 1524317660
+=======
+guid: 2d2f2de963d150240aa42e1781d36e16
+timeCreated: 1527040405
+>>>>>>> 9980d89c112b45877a3b4146dfab46d289e2120d
 licenseType: Free
 ShaderImporter:
   externalObjects: {}
