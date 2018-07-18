@@ -24,8 +24,9 @@
 
 		fixed4 LightingToon(SurfaceOutput s,fixed2 lightDir,fixed atten){
             half NdotL=dot(s.Normal,lightDir);
-			//uv范围0~1，这里通过fixed2(NdotL,0.5)模拟UV信息，并固定V的值为0.5，通过NdotL的值
+			//uv范围0~1，这里通过fixed2(NdotL,0.5)从rampmap上取样，固定V的值为0.5，通过NdotL的值
 			//来在坡度图上取样，由此获得如cartoon中色彩分明的效果
+			//如果色彩在V轴上是固定的，那么V取0~1内的值结果都一致
 			NdotL=tex2D(_RampTex,fixed2(NdotL,0.5));
 			fixed4 c;
 			c.rgb=s.Albedo*_LightColor0*NdotL*atten;
