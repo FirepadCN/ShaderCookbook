@@ -25,7 +25,8 @@ public class RenderToCubeMapTool : EditorWindow
     {
         //创建窗口
         Rect wr = new Rect(0, 0, 100, 100);
-        RenderToCubeMapTool window = (RenderToCubeMapTool)EditorWindow.GetWindowWithRect(typeof(RenderToCubeMapTool), wr, false, "CubeMapTool");
+        RenderToCubeMapTool window = (RenderToCubeMapTool)EditorWindow.GetWindow(typeof(RenderToCubeMapTool),false, "CubeMapTool");
+        window.autoRepaintOnSceneChange = true;
         window.Show();
 
     }
