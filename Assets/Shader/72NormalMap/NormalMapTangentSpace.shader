@@ -53,7 +53,8 @@ Shader "ShaderCookbook/NormalMapTangentSpace"{
                 
                 //计算副法线 （法线向量×切线向量）*切线向量w方向
                 //float3 binormal=cross(normalize(v.normal),normalize(v.tangent.xyz))*v.tangent.w;
-                //创建一个将向量从模型空间转向去切线空间的矩阵
+                //创建一个将向量从模型空间转向去切线空间的矩阵(如果一个变化只存在平移或者旋转，那么这个变化的逆矩阵就是他的转置矩阵
+				//。切空间到模型空间符合这种变化。)
                 //float3x3 rotation=float3x3(v.tangent.xyz,binormal,v.normal);
                 
                 //Unity内置宏
@@ -77,12 +78,15 @@ Shader "ShaderCookbook/NormalMapTangentSpace"{
                 //通过xy值求的z值 1=x*x+y*y+z*z
                 //tangentNormal.z=sqrt(1.0-saturate(dot(tangentNormal.xy,tangentNormal.xy)));
 
-                //被设置为"NormalMap"的法线贴图，可以使用内建函数直接求得
+                //被设置为"NormalMap"的法线贴图，可以使用内建函数直接求得(表示为normalmap的贴图，unity会根据平台优化压缩
+				//，手动计算可能出现错误，最好使用unity提供的UnpackNormal函数来计算)
                 tangentNormal=UnpackNormal(packedNormal);
                 tangentNormal.xy*=_BumpScale;
                 tangentNormal.z=sqrt(1-saturate(dot(tangentNormal.xy,tangentNormal.xy)));
 
                 fixed3 albedo=tex2D(_MainTex,o.uv).rgb*_Color.rgb;
+
+				//在切线空间中计算光照
                 fixed3 ambient =_LightColor0.rgb*albedo*max(0,dot(tangentNormal,tangentLightDir));
                 fixed diffuse=_LightColor0.rgb*albedo*max(tangentNormal,tangentLightDir);
                 fixed3 halfDir=normalize(tangentLightDir+tangentViewDir);
