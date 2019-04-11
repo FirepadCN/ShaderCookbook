@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: "\u4E0D\u505A\u5904\u7406"
-  m_Shader: {fileID: 4800000, guid: dacaeea28ba32f649a3afce3bf05d7d1, type: 3}
+  m_Name: "\u4E0D\u5B8C\u6574\u7684\u7EBF"
+  m_Shader: {fileID: 4800000, guid: c6374bc8b951315499586a59cf263c49, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -22,5 +22,6 @@ Material:
         m_Texture: {fileID: 2800000, guid: b0ecdb4e00f302d46ad63743c91ce0bd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - _Size: 0.5
     m_Colors: []
