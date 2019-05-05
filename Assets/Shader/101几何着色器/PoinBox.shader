@@ -89,7 +89,7 @@ Shader "ShaderCookbook/几何着色器/LineBox"
                 o.uv = float2(0.0f, 0.0f);
                 outStream.Append(o);
 
-    
+                outStream.RestartStrip();
     		}
 			
 			fixed4 frag (g2f i) : SV_Target
